@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Start Screen -->
+  <div class="container" id="startScreen">
+    <h1>🎓 Custom Quiz App</h1>
+    <p>Enter your details to begin:</p>
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br><br>
+
+    <label>Choose Role:</label><br>
+    <select id="role" onchange="updateCategories()">
+      <option value="">-- Select --</option>
+      <option value="student">Student (School)</option>
+      <option value="college">College Student (Engineering)</option>
+      <option value="professor">Professor</option>
+    </select><br><br>
+
+    <label>Choose Category:</label><br>
+    <select id="category"></select><br><br>
+
+    <button class="btn" onclick="startQuiz()">Start Quiz</button>
+  </div>
+
+  <!-- Quiz Screen -->
+  <div class="container hidden" id="quizScreen">
+    <h2 id="question"></h2>
+    <div id="options"></div>
+    <p id="timer">Time left: 15s</p>
+  </div>
+
+  <!-- Result Screen -->
+  <div class="container hidden" id="resultScreen">
+    <h2>Quiz Finished 🎉</h2>
+    <p id="score"></p>
+    <div id="emojiFeedback" class="emoji"></div>
+    <h3>Review:</h3>
+    <div id="review"></div>
+    <button class="btn" onclick="playAgain()">🔄 Play Again</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
